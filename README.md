@@ -37,8 +37,8 @@ Here is a snippet of CMake code which includes the this module:
 
 # ++ MODULE: MongoDB
 CPM_AddModule("mongodb"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-mongoc"
-  GIT_TAG "origin/master")
+  GIT_REPOSITORY "https://github.com/iauns/cpm-mongoc-legacy"
+  GIT_TAG "1.0.0")
 
 ...
 
