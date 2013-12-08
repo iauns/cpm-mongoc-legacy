@@ -74,7 +74,7 @@ set_target_properties(${MONGO_DB_LIBRARY}
 CPM_ExportAdditionalDefinition("-DMONGO_HAVE_STDINT")
 CPM_ExportAdditionalIncludeDir("${SOURCE_DIR}/src")
 
-set(MONGO_DB_BSON_LIBRARY ${CPM_LIB_TARGET_NAME}_BSON)
+set(MONGO_DB_BSON_LIBRARY "${CPM_LIB_TARGET_NAME}_BSON")
 add_library(${MONGO_DB_BSON_LIBRARY} SHARED IMPORTED GLOBAL)
 add_dependencies(${MONGO_DB_BSON_LIBRARY} ${MONGO_EP_TARGET_NAME})
 set_target_properties(${MONGO_DB_BSON_LIBRARY}
