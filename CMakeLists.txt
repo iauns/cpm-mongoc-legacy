@@ -62,7 +62,7 @@ add_dependencies(${MONGO_DB_LIBRARY} ${MONGO_EP_TARGET_NAME})
 # will reside. We will staically link against them.
 ExternalProject_Get_Property(${MONGO_EP_TARGET_NAME} SOURCE_DIR)
 
-# Generate a library path and set the imported location.
+# Generate a library path and set the imported location for mongoc.
 set_target_properties(${MONGO_DB_LIBRARY}
   PROPERTIES
   IMPORTED_LOCATION ${SOURCE_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}mongoc${CMAKE_STATIC_LIBRARY_SUFFIX}
@@ -73,4 +73,13 @@ set_target_properties(${MONGO_DB_LIBRARY}
 # module only.
 CPM_ExportAdditionalDefinition("-DMONGO_HAVE_STDINT")
 CPM_ExportAdditionalIncludeDir("${SOURCE_DIR}/src")
+
+set(MONGO_DB_BSON_LIBRARY ${CPM_LIB_TARGET_NAME}_BSON)
+add_library(${MONGO_DB_BSON_LIBRARY} SHARED IMPORTED GLOBAL)
+add_dependencies(${MONGO_DB_BSON_LIBRARY} ${MONGO_EP_TARGET_NAME})
+set_target_properties(${MONGO_DB_BSON_LIBRARY}
+  PROPERTIES
+  IMPORTED_LOCATION ${SOURCE_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}bson${CMAKE_STATIC_LIBRARY_SUFFIX}
+  )
+CPM_ExportAdditionalLibraryTarget(${MONGO_DB_BSON_LIBRARY})
 
