@@ -1,6 +1,8 @@
 cpm-mongoc
 ==========
 
+[![Build Status](https://travis-ci.org/iauns/cpm-mongoc-legacy.png)](https://travis-ci.org/iauns/cpm-mongoc-legacy)
+
 CPM module for [Legacy MongoDB's C Library](https://github.com/mongodb/mongo-c-driver-legacy.git).
 Avoid using this module in preference of the newer mongo-c-driver and libbson
 ([MongoDB's C Library](https://github.com/mongodb/mongo-c-driver.git)).
