@@ -37,6 +37,8 @@ CPM_InitModule(${CPM_MODULE_NAME})
 # Mongo c driver
 #------------------------------------------------------------------------------
 
+include(ExternalProject)
+
 set(MONGO_EXTRA_BUILD_COMMAND "")
 if ((DEFINED CPM_MOD_MONGODB_USE_32BIT) AND (CPM_MOD_MONGODB_USE_32BIT))
   set(MONGO_EXTRA_BUILD_COMMAND "--m32")
